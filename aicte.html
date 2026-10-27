@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Command Center - AICTE Portal</title>
+    <title>National Command Center - AICTE</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Chart.js -->
@@ -14,41 +14,21 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
         
         :root {
-            --navy: #12315A;
-            --primary: #1D4ED8;
-            --primary-light: #EFF6FF;
-            --bg: #F4F6F9;
-            --surface: #FFFFFF;
-            --text-main: #1F2937;
-            --text-muted: #6B7280;
-            --saffron: #F59E0B;
-            --green: #10B981;
-            --red: #EF4444;
-            --border: #E5E7EB;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 12px;
+            --navy: #12315A; --primary: #1D4ED8; --primary-light: #EFF6FF; --bg: #F4F6F9; --surface: #FFFFFF;
+            --text-main: #1F2937; --text-muted: #6B7280; --saffron: #F59E0B; --green: #10B981; --red: #EF4444;
+            --border: #E5E7EB; --shadow-sm: 0 1px 3px rgba(0,0,0,0.1); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.1); --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); --radius: 12px;
         }
 
         /* Dark Mode Variables */
-        body.dark-mode {
-            --bg: #111827;
-            --surface: #1F2937;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
-            --border: #374151;
-            --primary-light: rgba(29, 78, 216, 0.2);
+        body.dark-mode { 
+            --bg: #111827; --surface: #1F2937; --text-main: #F9FAFB; --text-muted: #9CA3AF; 
+            --border: #374151; --primary-light: rgba(29, 78, 216, 0.2); 
         }
 
         body { 
-            background-color: var(--bg); 
-            color: var(--text-main); 
-            display: flex; 
-            min-height: 100vh; 
-            overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: var(--bg); color: var(--text-main); display: flex; 
+            min-height: 100vh; overflow-x: hidden; transition: background-color 0.3s ease, color 0.3s ease; 
         }
 
         /* ================= SIDEBAR & MOBILE OVERLAY ================= */
@@ -111,17 +91,6 @@
             display: none; background: var(--surface); border: 1px solid var(--border);
             padding: 10px; border-radius: 8px; cursor: pointer; color: var(--text-main);
         }
-        .search-trigger {
-            display: flex; align-items: center; gap: 12px; background: var(--surface);
-            border: 1px solid var(--border); padding: 10px 16px; border-radius: 50px;
-            color: var(--text-muted); font-size: 13px; cursor: pointer; width: 250px;
-            box-shadow: var(--shadow-sm); transition: var(--transition);
-        }
-        .search-trigger kbd {
-            background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 11px;
-            border: 1px solid var(--border); margin-left: auto;
-        }
-
         .topbar-right { display: flex; align-items: center; gap: 16px; }
         .theme-toggle {
             background: var(--surface); border: 1px solid var(--border); padding: 10px;
@@ -170,7 +139,7 @@
 
         /* ================= TABLE ================= */
         .table-container { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
-        table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--surface); }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--surface); min-width: 800px; }
         th { background: var(--bg); text-align: left; padding: 14px 16px; font-weight: 600; color: var(--text-muted); border-bottom: 1px solid var(--border); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; white-space: nowrap; }
         td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--text-main); }
         tr:last-child td { border-bottom: none; }
@@ -182,7 +151,7 @@
         .badge-amber { background: #FFF7ED; color: var(--saffron); }
         .badge-blue { background: var(--primary-light); color: var(--primary); }
 
-        .form-control { padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; background: var(--surface); color: var(--text-main); transition: var(--transition); }
+        .form-control { padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; background: var(--surface); color: var(--text-main); transition: var(--transition); width: 100%; }
         .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(29,78,216,0.1); }
 
         .btn {
@@ -226,19 +195,14 @@
             .close-sidebar-btn { display: flex; }
             .main-content { margin-left: 0; padding: 20px; width: 100%; }
             .menu-toggle { display: flex; }
-            .search-trigger { display: none; }
             .chart-grid { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 600px) {
             .metrics-grid { grid-template-columns: 1fr; }
             .topbar-right .user-info { display: none; }
             .modal { width: 95%; }
             .toast-container { right: 16px; bottom: 16px; width: calc(100% - 32px); }
-            .table-container { font-size: 12px; }
-            th, td { padding: 10px; }
             .filters { flex-direction: column; }
-            .filters input, .filters select { width: 100%; }
         }
     </style>
 </head>
@@ -265,7 +229,7 @@
             </button>
         </div>
         <nav class="nav-menu">
-            <a href="#overview" class="nav-item active"><i data-lucide="globe"></i> National Overview</a>
+            <a href="#overview" class="nav-item active"><i data-lucide="globe"></i> Intelligence Dashboard</a>
             <a href="#institutions" class="nav-item"><i data-lucide="building-2"></i> Institution Registry</a>
             <a href="#validation" class="nav-item"><i data-lucide="shield-alert"></i> National Validations</a>
             <a href="#audit" class="nav-item"><i data-lucide="file-text"></i> System Audit Logs</a>
@@ -283,9 +247,6 @@
                 <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
                     <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
                 </button>
-                <div class="search-trigger" id="searchTrigger">
-                    <i data-lucide="search"></i> Search portal... <kbd>Ctrl K</kbd>
-                </div>
             </div>
             <div class="topbar-right">
                 <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
@@ -329,7 +290,7 @@
             <div class="chart-grid">
                 <div class="card">
                     <div class="card-header">
-                        <h3><i data-lucide="trending-up" style="width: 18px; height: 18px; color: var(--primary);"></i> National Enrolment Trend (5 Years)</h3>
+                        <h3><i data-lucide="trending-up" style="width: 18px; height: 18px; color: var(--primary);"></i> National Enrolment Trend</h3>
                     </div>
                     <div class="chart-container">
                         <canvas id="nationalEnrolmentChart"></canvas>
@@ -345,6 +306,7 @@
                 </div>
             </div>
             
+            <!-- Top States Chart -->
             <div class="card">
                 <div class="card-header">
                     <h3><i data-lucide="bar-chart" style="width: 18px; height: 18px; color: var(--primary);"></i> Top States by Enrolment</h3>
@@ -364,7 +326,7 @@
                 </div>
                 <div class="filters" style="display: flex; gap: 12px; margin-bottom: 16px;">
                     <input type="text" id="instSearch" class="form-control" placeholder="Search institution by name or code..." style="flex: 1;" oninput="filterInstitutions()">
-                    <select id="stateFilter" class="form-control" onchange="filterInstitutions()">
+                    <select id="stateFilter" class="form-control" style="width: auto;" onchange="filterInstitutions()">
                         <option value="all">All States</option>
                         <option value="Delhi">Delhi</option>
                         <option value="Karnataka">Karnataka</option>
@@ -395,7 +357,7 @@
         </section>
 
         <!-- NATIONAL VALIDATIONS SECTION -->
-        <section id="validation" style="display: none;">
+        <section id="validation" style="display: none; flex-direction: column; gap: 24px;">
             <div class="card">
                 <div class="card-header">
                     <h3><i data-lucide="shield-alert" style="width: 20px; height: 20px; color: var(--red);"></i> National Validation Center</h3>
@@ -408,7 +370,7 @@
         </section>
 
         <!-- AUDIT LOGS SECTION -->
-        <section id="audit" style="display: none;">
+        <section id="audit" style="display: none; flex-direction: column; gap: 24px;">
             <div class="card">
                 <div class="card-header">
                     <h3><i data-lucide="file-text" style="width: 20px; height: 20px; color: var(--text-muted);"></i> System Audit Logs</h3>
@@ -431,7 +393,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- INSTITUTION DETAILS MODAL -->
@@ -652,7 +613,7 @@
                     <td>${inst.actual}</td>
                     <td>
                         <div style="display:flex; align-items:center; gap:8px;">
-                            <div style="flex:1; height:6px; background:var(--border); border-radius:3px; overflow:hidden;">
+                            <div style="flex:1; height:6px; background:var(--border); border-radius:3px; overflow:hidden; min-width: 60px;">
                                 <div style="width:${util}%; height:100%; background:${util > 100 ? 'var(--red)' : 'var(--green)'};"></div>
                             </div>
                             <span style="font-size:12px; font-weight:600;">${util}%</span>
